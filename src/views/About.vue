@@ -12,8 +12,9 @@
       <span>{{ $store.state.user.email }}</span>
       <span>{{ $store.state.user.senha }}</span>
       <button @click="savepass" type="submit">SAVE</button>
+      <h1>{{ $store.state.user.senha }}</h1>
     </div>
-  </div>
+  </div> 
 </template>
 
 <script>
@@ -26,7 +27,8 @@
     },
     methods: {
       savepass(){
-        console.log("salvando")
+        console.log("salvando:" + this.mypass)
+        this.$store.commit('savepass', this.mypass)
       }
     },
   }
